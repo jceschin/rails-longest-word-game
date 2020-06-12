@@ -7,12 +7,11 @@ class GamesController < ApplicationController
   end
 
   def score
-    @words = params[:word]
-    @word = @words.last.split("")
+    @word = params[:word].last.split("")
     @answer = ""
 
     @word.each do |letter|
-      if !@letters.include?(letter)
+      if !@letters.includes?(letter)
         @letters = @letters.join(",")
         @answer = "Sorry but #{@word.join} can't be built out of #{@letters}"
       end
