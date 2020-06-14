@@ -3,7 +3,7 @@ require 'open-uri'
 class GamesController < ApplicationController
   def new
     @letters = []
-    12.times do
+    10.times do
       @letters << ('A'..'Z').to_a.sample
     end
   end
